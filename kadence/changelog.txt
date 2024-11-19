@@ -1,3 +1,6 @@
+== 1.2.12 | 19th November 2024 ==
+* Fix: Possible issue with woocommerce product image sizes.
+
 == 1.2.11 | 14th November 2024 ==
 * Fix: Issue with buttons vertical alignment in rows
 * Fix: WooCommerce single product pages on mobile RTL
