@@ -1,3 +1,10 @@
+== 1.2.13 | 5th Dec 2024 ==
+* Update: Improve tabbing through navigation.
+* Update: Surecart product style issue.
+* Fix: Possible issue with third-party plugins breaking customizer
+* Fix: Issue with scroll to top aria hidden.
+* Fix: Issue with bbpress reply date.
+
 == 1.2.12 | 19th November 2024 ==
 * Fix: Possible issue with woocommerce product image sizes.
 

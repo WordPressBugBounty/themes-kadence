@@ -147,6 +147,12 @@
 		
 						// 9 is tab KeyMap
 						if ( 9 === e.keyCode ) {
+
+							var focusSelector =
+							'ul.toggle-show > li > a, ul.toggle-show > li > .dropdown-nav-special-toggle';
+							if ( SUBMENUS[ i ].parentNode.classList.contains('kadence-menu-mega-enabled') ) {
+								focusSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
+							}
 							if ( e.shiftKey ) {
 								// Means we're tabbing out of the beginning of the submenu.
 								if ( window.kadence.isfirstFocusableElement (SUBMENUS[ i ], document.activeElement, focusSelector ) ) {
@@ -160,6 +166,8 @@
 						// 27 is keymap for esc key.
 						if ( e.keyCode === 27 ) {
 							window.kadence.toggleSubMenu( SUBMENUS[ i ].parentNode, false );
+							// Move the focus back to the toggle.
+							SUBMENUS[ i ].parentNode.querySelector('.dropdown-nav-special-toggle').focus();
 						}
 					} );
 		
@@ -220,9 +228,11 @@
 			*/
 			if ( parentMenuItemToggled ) {
 				// Toggle "off" the submenu.
-				parentMenuItem.classList.remove( 'menu-item--toggled-on' );
-				subMenu.classList.remove( 'toggle-show' );
-				toggleButton.setAttribute( 'aria-label', ( dropdown_label ? kadenceConfig.screenReader.expandOf + ' ' + dropdown_label : kadenceConfig.screenReader.expand ) );
+				setTimeout(function () {
+					parentMenuItem.classList.remove( 'menu-item--toggled-on' );
+					subMenu.classList.remove( 'toggle-show' );
+					toggleButton.setAttribute( 'aria-label', ( dropdown_label ? kadenceConfig.screenReader.expandOf + ' ' + dropdown_label : kadenceConfig.screenReader.expand ) );
+				}, 5);
 
 				// Make sure all children are closed.
 				var subMenuItemsToggled = parentMenuItem.querySelectorAll( '.menu-item--toggled-on' );
@@ -915,8 +925,10 @@
 				var checkScrollVisiblity = function() {
 					if ( window.scrollY > 100 ) {
 						scrollBtn.classList.add( 'scroll-visible' );
+						scrollBtn.setAttribute( 'aria-hidden', false );
 					} else {
-						scrollBtn.classList.remove( 'scroll-visible' );;
+						scrollBtn.classList.remove( 'scroll-visible' );
+						scrollBtn.setAttribute( 'aria-hidden', true );
 					}
 				}
 				window.addEventListener( 'scroll', checkScrollVisiblity );
@@ -924,8 +936,8 @@
 				// Toggle the Scroll to top on click.
 				scrollBtn.addEventListener( 'click', function( e ) {
 					e.preventDefault();
-					//window.scrollBy( { top: 0, left: 0, behavior: 'smooth' } );
 					window.scrollTo({top: 0, behavior: 'smooth'});
+					document.querySelector( '.skip-link' ).focus();
 					document.activeElement.blur();
 				} );
 			}
