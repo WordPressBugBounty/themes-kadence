@@ -1,3 +1,8 @@
+== 1.2.14 | 17th Dec 2024 ==
+* Update: Set current menu items based on url hash anchor changes.
+* Fix: Issue with simple lightbox captions on some blocks.
+* Fix: Issue with scroll to top not smoothly scrolling.
+
 == 1.2.13 | 5th Dec 2024 ==
 * Update: Improve tabbing through navigation.
 * Update: Surecart product style issue.
