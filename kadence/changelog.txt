@@ -1,3 +1,11 @@
+== 1.2.15 | 30th January 2025 ==
+* Add: Disable default sitemap option.
+* Fix: Threads Icon missing brand colors
+* Fix: LifterLMS Course Lesson Style border issue
+* Fix: Image block border styles
+* Fix: Customizer Typography settings reset button
+* Fix: Funnel Display font is not available in Customizer
+
 == 1.2.14 | 17th Dec 2024 ==
 * Update: Set current menu items based on url hash anchor changes.
 * Fix: Issue with simple lightbox captions on some blocks.

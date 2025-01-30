@@ -32,7 +32,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 * Adds the action and filter hooks to integrate with WordPress.
 	 */
 	public function initialize() {
-
+		$disable_sitemap = kadence()->option( 'disable_sitemap' ) ? true : false;
+		add_filter( 'wp_sitemaps_enabled', $disable_sitemap ? '__return_false' : '__return_true' );
 	}
 
 	/**
