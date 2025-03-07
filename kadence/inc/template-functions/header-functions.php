@@ -228,7 +228,7 @@ function primary_navigation() {
     $openType = get_theme_mod('primary_navigation_open_type');
 
     ?>
-    <nav id="site-navigation" class="main-navigation header-navigation <?php echo empty($openType) || $openType == 'hover' ? 'hover-to-open' : 'click-to-open'; ?> nav--toggle-sub header-navigation-style-<?php echo esc_attr( kadence()->option( 'primary_navigation_style' ) ); ?> header-navigation-dropdown-animation-<?php echo esc_attr( kadence()->option( 'dropdown_navigation_reveal' ) ); ?>" role="navigation" aria-label="<?php esc_attr_e( 'Primary Navigation', 'kadence' ); ?>">
+    <nav id="site-navigation" class="main-navigation header-navigation <?php echo $openType == 'click' ? 'click-to-open' : 'hover-to-open'; ?> nav--toggle-sub header-navigation-style-<?php echo esc_attr( kadence()->option( 'primary_navigation_style' ) ); ?> header-navigation-dropdown-animation-<?php echo esc_attr( kadence()->option( 'dropdown_navigation_reveal' ) ); ?>" role="navigation" aria-label="<?php esc_attr_e( 'Primary Navigation', 'kadence' ); ?>">
     <?php
     kadence()->customizer_quick_link();
     ?>

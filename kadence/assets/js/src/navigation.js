@@ -1180,7 +1180,7 @@
 
     initClickToOpen: function () {
       // Find all <li> elements with the `menu-item--has-toggle` class
-      const toggleItems = document.querySelectorAll('li.menu-item--has-toggle');
+      const toggleItems = document.querySelectorAll('.header-navigation.click-to-open li.menu-item--has-toggle');
 
       toggleItems.forEach(function (item) {
         const anchor = item.querySelector('a'); // Find the first child anchor inside <li>
