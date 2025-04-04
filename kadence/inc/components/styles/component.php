@@ -191,7 +191,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		// If we are building the gfonts array, then we are in the header and it should contain theme fonts.
 		$temp_footer_gfonts = ( $gfonts_type === 'gfonts' ) ? self::$google_fonts : [];
 		foreach ( $gfonts as $key => $font ) {
-			if ( ! array_key_exists( $key, self::$google_fonts ) ) {
+			if ( ! array_key_exists( $key, $temp_footer_gfonts ) ) {
 				$add_font = array(
 					'fontfamily'   => $font['fontfamily'],
 					'fontvariants' => ( isset( $font['fontvariants'] ) && ! empty( $font['fontvariants'] ) && is_array( $font['fontvariants'] ) ? $font['fontvariants'] : array() ),
@@ -200,12 +200,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				$temp_footer_gfonts[ $key ] = $add_font;
 			} else {
 				foreach ( $font['fontvariants'] as $variant ) {
-					if ( ! in_array( $variant, self::$google_fonts[ $key ]['fontvariants'], true ) ) {
+					if ( ! in_array( $variant, $temp_footer_gfonts[ $key ]['fontvariants'], true ) ) {
 						array_push( $temp_footer_gfonts[ $key ]['fontvariants'], $variant );
 					}
 				}
 				foreach ( $font['fontsubsets'] as $variant ) {
-					if ( ! in_array( $variant, self::$google_fonts[ $key ]['fontsubsets'], true ) ) {
+					if ( ! in_array( $variant, $temp_footer_gfonts[ $key ]['fontsubsets'], true ) ) {
 						array_push( $temp_footer_gfonts[ $key ]['fontsubsets'], $variant );
 					}
 				}
