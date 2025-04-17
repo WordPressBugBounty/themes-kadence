@@ -1,3 +1,8 @@
+= 1.2.22 | 17th April 2025 =
+* Update: Adding datePublished meta information for seo.
+* Fix: Link to starter templates page in Kadence -> Starter tempaltes.
+* Fix: Updated logic for custom category colors in loop.
+
 = 1.2.21 | 4th April 2025 =
 * Fix: Issue with loading google fonts in footer.
 
