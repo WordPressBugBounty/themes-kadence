@@ -1,3 +1,9 @@
+= 1.2.24 | 13th May 2025 =
+* Fix: Active color setting for parent menu does not work if submenu is opened in Sticky Header
+
+= 1.2.23 | 1st May 2025 =
+* Update: Connect post category colors with relevant blocks (Posts, Post Grid)
+
 = 1.2.22 | 17th April 2025 =
 * Update: Adding datePublished meta information for seo.
 * Fix: Link to starter templates page in Kadence -> Starter tempaltes.
