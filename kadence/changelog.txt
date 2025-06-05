@@ -1,4 +1,8 @@
-= 1.2.24 | 13th May 2025 =
+
+= 1.2.25 | 5th June 2025 =
+* Update: Adding Mega Menu open on click/hover settings to Secondary+ navigations.
+
+= 1.2.24 | 15th May 2025 =
 * Fix: Active color setting for parent menu does not work if submenu is opened in Sticky Header
 
 = 1.2.23 | 1st May 2025 =
