@@ -1,3 +1,8 @@
+= 1.2.26 | 19th June 2025 =
+* Add: Description for some settings in customizer.
+* Fix: Responsive theme font settings in the editor.
+* Fix: Improve layout of LifterLMS 7.8.
+* Fix: Improve visability of mobile off canvas menu in some situations.
 
 = 1.2.25 | 5th June 2025 =
 * Update: Adding Mega Menu open on click/hover settings to Secondary+ navigations.
