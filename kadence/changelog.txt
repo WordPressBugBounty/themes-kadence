@@ -1,3 +1,11 @@
+= 1.2.28 | 17th July 2025
+* Fix: Duplicated banner roles removed.
+* Fix: Store notice placment above the content.
+* Fix: Circle shape for radial gradient color selector. 
+* Fix: Scroll to id on WooCommerce single product tabs.
+* Fix: Overlapping text in some Woo Commerce product carts.
+* Fix: Tutor LMS course layout title typography settings.
+
 = 1.2.27 | 3rd July 2025 =
 * Fix: Sale button position in pro gallery for Woo Templates.
 

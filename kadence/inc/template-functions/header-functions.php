@@ -281,7 +281,6 @@ function render_custom_logo( $option_string = '', $custom_class = 'extra-custom-
 	if ( $custom_logo_id ) {
 		$custom_logo_attr = array(
 			'class' => 'custom-logo ' . $custom_class,
-			'loading' => false,
 		);
 
 		/*
@@ -335,7 +334,6 @@ function custom_logo( $blog_id = 0 ) {
 	if ( $custom_logo_id ) {
 		$custom_logo_attr = array(
 			'class' => 'custom-logo',
-			'loading' => false,
 		);
 
 		/*
