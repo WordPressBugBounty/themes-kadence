@@ -135,6 +135,24 @@
 			};
 			var slider = new Splide( element, options );
 			if ( initialize ) {
+				// Add keyboard navigation for pagination
+				slider.on('mounted', function() {
+					var paginationButtons = element.querySelectorAll('.splide__pagination__page');
+					paginationButtons.forEach(function(button) {
+						button.addEventListener('keydown', function(event) {
+							// Check if space bar or return/enter is pressed
+							if (event.key === ' ' || event.key === 'Enter') {
+								event.preventDefault();
+								var activeSlideIndex = slider?.index || 0;
+								var activeSlide = slider?.Components?.Slides?.getAt(activeSlideIndex)?.slide;
+								if (activeSlide) {
+									activeSlide.setAttribute('tabindex', '0');
+									activeSlide.focus();
+								}
+							}
+						});
+					});
+				});
 				slider.mount();
 			}
 		},

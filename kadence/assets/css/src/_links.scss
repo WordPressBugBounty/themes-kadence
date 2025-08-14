@@ -1,11 +1,13 @@
 a {
   color: var(--global-palette-highlight);
+  text-underline-offset: 0.1em;
   transition: all 0.1s linear;
 }
 a:hover,
 a:focus,
 a:active {
   color: var(--global-palette-highlight-alt);
+  text-underline-offset: 0.25em;
 }
 a:hover,
 a:active {

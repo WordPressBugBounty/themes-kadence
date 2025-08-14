@@ -49,6 +49,11 @@ article.sticky {
     position: relative;
     //-index: 1;
 }
+ul.kadence-posts-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
 .kadence-thumbnail-position-behind + .entry {
     z-index: 1;
     position: relative;

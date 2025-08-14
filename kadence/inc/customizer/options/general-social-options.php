@@ -15,295 +15,301 @@ ob_start(); ?>
 </div>
 <?php
 $compontent_description = ob_get_clean();
-$settings = array(
-	'social_settings' => array(
+$settings               = [
+	'social_settings'           => [
 		'control_type' => 'kadence_blank_control',
 		'section'      => 'general_social',
 		'settings'     => false,
 		'priority'     => 1,
 		'description'  => $compontent_description,
-	),
-	'facebook_link' => array(
+	],
+	'social_links_open_new_tab' => [
+		'control_type' => 'kadence_switch_control',
+		'sanitize'     => 'kadence_sanitize_toggle',
+		'section'      => 'general_social',
+		'default'      => kadence()->default( 'social_links_open_new_tab' ),
+		'label'        => esc_html__( 'Open Social Links in New Tab', 'kadence' ),
+	],
+	'facebook_link'             => [
 		'control_type' => 'kadence_text_control',
 		'sanitize'     => 'esc_url_raw',
 		'section'      => 'general_social',
 		'default'      => kadence()->default( 'facebook_link' ),
 		'label'        => esc_html__( 'Facebook', 'kadence' ),
-	),
-	'twitter_link' => array(
+	],
+	'twitter_link'              => [
 		'control_type' => 'kadence_text_control',
 		'sanitize'     => 'esc_url_raw',
 		'section'      => 'general_social',
 		'default'      => kadence()->default( 'twitter_link' ),
 		'label'        => esc_html__( 'X formerly Twitter', 'kadence' ),
-	),
-	'threads_link' => array(
+	],
+	'threads_link'              => [
 		'control_type' => 'kadence_text_control',
 		'sanitize'     => 'esc_url_raw',
 		'section'      => 'general_social',
 		'default'      => kadence()->default( 'threads_link' ),
 		'label'        => esc_html__( 'Threads', 'kadence' ),
-	),
-	'instagram_link' => array(
+	],
+	'instagram_link'            => [
 		'control_type' => 'kadence_text_control',
 		'sanitize'     => 'esc_url_raw',
 		'section'      => 'general_social',
 		'default'      => kadence()->default( 'instagram_link' ),
 		'label'        => esc_html__( 'Instagram', 'kadence' ),
-	),
-	'youtube_link' => array(
+	],
+	'youtube_link'              => [
 		'control_type' => 'kadence_text_control',
 		'sanitize'     => 'esc_url_raw',
 		'section'      => 'general_social',
 		'default'      => kadence()->default( 'youtube_link' ),
 		'label'        => esc_html__( 'YouTube', 'kadence' ),
-	),
-	'vimeo_link' => array(
+	],
+	'vimeo_link'                => [
 		'control_type' => 'kadence_text_control',
 		'sanitize'     => 'esc_url_raw',
 		'section'      => 'general_social',
 		'default'      => kadence()->default( 'vimeo_link' ),
 		'label'        => esc_html__( 'Vimeo', 'kadence' ),
-	),
-	'facebook_group_link' => array(
+	],
+	'facebook_group_link'       => [
 		'control_type' => 'kadence_text_control',
 		'sanitize'     => 'esc_url_raw',
 		'section'      => 'general_social',
 		'default'      => kadence()->default( 'facebook_group_link' ),
 		'label'        => esc_html__( 'Facebook Group', 'kadence' ),
-	),
-	'pinterest_link' => array(
+	],
+	'pinterest_link'            => [
 		'control_type' => 'kadence_text_control',
 		'sanitize'     => 'esc_url_raw',
 		'section'      => 'general_social',
 		'default'      => kadence()->default( 'pinterest_link' ),
 		'label'        => esc_html__( 'Pinterest', 'kadence' ),
-	),
-	'linkedin_link' => array(
+	],
+	'linkedin_link'             => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'linkedin_link' ),
 		'label'        => esc_html__( 'Linkedin', 'kadence' ),
-	),
-	'dribbble_link' => array(
+	],
+	'dribbble_link'             => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'dribbble_link' ),
 		'label'        => esc_html__( 'Dribbble', 'kadence' ),
-	),
-	'behance_link' => array(
+	],
+	'behance_link'              => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'behance_link' ),
 		'label'        => esc_html__( 'Behance', 'kadence' ),
-	),
-	'patreon_link' => array(
+	],
+	'patreon_link'              => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'patreon_link' ),
 		'label'        => esc_html__( 'Patreon', 'kadence' ),
-	),
-	'reddit_link' => array(
+	],
+	'reddit_link'               => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'reddit_link' ),
 		'label'        => esc_html__( 'Reddit', 'kadence' ),
-	),
-	'medium_link' => array(
+	],
+	'medium_link'               => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'medium_link' ),
 		'label'        => esc_html__( 'medium', 'kadence' ),
-	),
-	'wordpress_link' => array(
+	],
+	'wordpress_link'            => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'wordpress_link' ),
 		'label'        => esc_html__( 'WordPress', 'kadence' ),
-	),
-	'github_link' => array(
+	],
+	'github_link'               => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'github_link' ),
 		'label'        => esc_html__( 'GitHub', 'kadence' ),
-	),
-	'vk_link' => array(
+	],
+	'vk_link'                   => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'vk_link' ),
 		'label'        => esc_html__( 'VK', 'kadence' ),
-	),
-	'xing_link' => array(
+	],
+	'xing_link'                 => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'xing_link' ),
 		'label'        => esc_html__( 'Xing', 'kadence' ),
-	),
-	'rss_link' => array(
+	],
+	'rss_link'                  => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'rss_link' ),
 		'label'        => esc_html__( 'RSS', 'kadence' ),
-	),
-	'google_reviews_link' => array(
+	],
+	'google_reviews_link'       => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'google_reviews_link' ),
 		'label'        => esc_html__( 'Google Reviews', 'kadence' ),
-	),
-	'yelp_link' => array(
+	],
+	'yelp_link'                 => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'yelp_link' ),
 		'label'        => esc_html__( 'Yelp', 'kadence' ),
-	),
-	'trip_advisor_link' => array(
+	],
+	'trip_advisor_link'         => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'trip_advisor_link' ),
 		'label'        => esc_html__( 'Trip Advisor', 'kadence' ),
-	),
-	'imdb_link' => array(
+	],
+	'imdb_link'                 => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'imdb_link' ),
 		'label'        => esc_html__( 'IMDB', 'kadence' ),
-	),
-	'whatsapp_link' => array(
+	],
+	'whatsapp_link'             => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'whatsapp_link' ),
 		'label'        => esc_html__( 'WhatsApp', 'kadence' ),
-	),
-	'telegram_link' => array(
+	],
+	'telegram_link'             => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'telegram_link' ),
 		'label'        => esc_html__( 'Telegram', 'kadence' ),
-	),
-	'soundcloud_link' => array(
+	],
+	'soundcloud_link'           => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'soundcloud_link' ),
 		'label'        => esc_html__( 'SoundCloud', 'kadence' ),
-	),
-	'tumblr_link' => array(
+	],
+	'tumblr_link'               => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'tumblr_link' ),
 		'label'        => esc_html__( 'Tumblr', 'kadence' ),
-	),
-	'tiktok_link' => array(
+	],
+	'tiktok_link'               => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'tiktok_link' ),
 		'label'        => esc_html__( 'Tiktok', 'kadence' ),
-	),
-	'discord_link' => array(
+	],
+	'discord_link'              => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'discord_link' ),
 		'label'        => esc_html__( 'Discord', 'kadence' ),
-	),
-	'spotify_link' => array(
+	],
+	'spotify_link'              => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'spotify_link' ),
 		'label'        => esc_html__( 'Spotify', 'kadence' ),
-	),
-	'apple_podcasts_link' => array(
+	],
+	'apple_podcasts_link'       => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'apple_podcasts_link' ),
 		'label'        => esc_html__( 'Apple Podcast', 'kadence' ),
-	),
-	'flickr_link' => array(
+	],
+	'flickr_link'               => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'flickr_link' ),
 		'label'        => esc_html__( 'Flickr', 'kadence' ),
-	),
-	'500px_link' => array(
+	],
+	'500px_link'                => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( '500px_link' ),
 		'label'        => esc_html__( '500PX', 'kadence' ),
-	),
-	'bandcamp_link' => array(
+	],
+	'bandcamp_link'             => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'bandcamp_link' ),
 		'label'        => esc_html__( 'Bandcamp', 'kadence' ),
-	),
-	'anchor_link' => array(
+	],
+	'anchor_link'               => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'anchor_link' ),
 		'label'        => esc_html__( 'Anchor', 'kadence' ),
-	),
-	'email_link' => array(
+	],
+	'email_link'                => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'sanitize_text_field',
 		'default'      => kadence()->default( 'email_link' ),
 		'label'        => esc_html__( 'Email', 'kadence' ),
-	),
-	'phone_link' => array(
+	],
+	'phone_link'                => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'sanitize_text_field',
 		'default'      => kadence()->default( 'phone_link' ),
 		'label'        => esc_html__( 'Phone', 'kadence' ),
-	),
-	'custom1_link' => array(
+	],
+	'custom1_link'              => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'custom1_link' ),
 		'label'        => esc_html__( 'Custom 1', 'kadence' ),
-	),
-	'custom2_link' => array(
+	],
+	'custom2_link'              => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'custom2_link' ),
 		'label'        => esc_html__( 'Custom 2', 'kadence' ),
-	),
-	'custom3_link' => array(
+	],
+	'custom3_link'              => [
 		'control_type' => 'kadence_text_control',
 		'section'      => 'general_social',
 		'sanitize'     => 'esc_url_raw',
 		'default'      => kadence()->default( 'custom3_link' ),
 		'label'        => esc_html__( 'Custom 3', 'kadence' ),
-	),
-);
+	],
+];
 
 Theme_Customizer::add_settings( $settings );
-
