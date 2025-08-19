@@ -49,10 +49,27 @@ article.sticky {
     position: relative;
     //-index: 1;
 }
-ul.kadence-posts-list {
+.site-main {
+    min-width: 0;
+}
+ul.kadence-posts-list,
+.single-content ul.kadence-posts-list {
     padding: 0;
     margin: 0;
     list-style: none;
+}
+ul.kt-testimonial-grid-wrap,
+.single-content ul.kt-testimonial-grid-wrap {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.kadence-posts-list .entry-list-item {
+    display: flex;
+    flex-direction: column;
+}
+.kadence-posts-list .entry-list-item article.entry {
+    flex: 1;
 }
 .kadence-thumbnail-position-behind + .entry {
     z-index: 1;

@@ -123,6 +123,16 @@
               ? kadenceConfig.screenReader.expandOf + " " + dropdown_label
               : kadenceConfig.screenReader.expand
           );
+          dropdownBtn.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+          dropdownBtn.setAttribute(
+            "aria-label",
+            dropdown_label
+              ? kadenceConfig.screenReader.expandOf + " " + dropdown_label
+              : kadenceConfig.screenReader.expand
+          );
           dropdownBtn.classList.add("dropdown-nav-special-toggle");
           parentMenuItem.insertBefore(
             dropdownBtn,
@@ -357,7 +367,9 @@
       var duration = toggle.dataset.toggleDuration
         ? toggle.dataset.toggleDuration
         : 250;
-      window.kadence.toggleAttribute(toggle, "aria-expanded", "true", "false");
+      if (toggle.hasAttribute("aria-expanded")) {
+        window.kadence.toggleAttribute(toggle, "aria-expanded", "true", "false");
+      }
       if (target.classList.contains("show-drawer")) {
         if (toggle.dataset.toggleBodyClass) {
           document.body.classList.remove(toggle.dataset.toggleBodyClass);
@@ -488,13 +500,17 @@
             document
               .querySelectorAll(".popup-drawer.show-drawer.active")
               .forEach(function (element) {
-                window.kadence.toggleDrawer(
-                  document.querySelector(
-                    '*[data-toggle-target="' +
-                      element.dataset.drawerTargetString +
-                      '"]'
-                  )
-                );
+                if ( element.querySelector('.drawer-toggle') ) {
+                  window.kadence.toggleDrawer(element.querySelector('.drawer-toggle'));
+                } else {
+                  window.kadence.toggleDrawer(
+                    document.querySelector(
+                      '*[data-toggle-target="' +
+                        element.dataset.drawerTargetString +
+                        '"]'
+                    )
+                  );
+                }
               });
           }
         }

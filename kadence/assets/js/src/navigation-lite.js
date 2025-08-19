@@ -116,6 +116,10 @@
 					var dropdown_label = parentMenuItem.querySelector( '.nav-drop-title-wrap' ).firstChild.textContent.trim();
 					var dropdownBtn = document.createElement( 'BUTTON' ); // Create a <button> element
 					dropdownBtn.setAttribute( 'aria-label', ( dropdown_label ? kadenceConfig.screenReader.expandOf + ' ' + dropdown_label : kadenceConfig.screenReader.expand ) );
+					dropdownBtn.setAttribute(
+						"aria-expanded",
+						"false"
+					);
 					dropdownBtn.classList.add( 'dropdown-nav-special-toggle' );
 					parentMenuItem.insertBefore( dropdownBtn, parentMenuItem.childNodes[1] );
 					// Toggle the submenu when we click the dropdown button.
@@ -367,7 +371,11 @@
 					if ( document.querySelectorAll( '.popup-drawer.show-drawer.active' ) ) {
 						event.preventDefault();
 						document.querySelectorAll( '.popup-drawer.show-drawer.active' ).forEach(function ( element ) {
-							window.kadence.toggleDrawer( document.querySelector('*[data-toggle-target="' + element.dataset.drawerTargetString + '"]' ) );
+							if ( element.querySelector('.drawer-toggle') ) {
+								window.kadence.toggleDrawer(element.querySelector('.drawer-toggle'));
+							  } else {
+								window.kadence.toggleDrawer( document.querySelector('*[data-toggle-target="' + element.dataset.drawerTargetString + '"]' ) );
+							  }
 						} );
 					}
 				}

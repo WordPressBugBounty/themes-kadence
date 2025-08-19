@@ -226,7 +226,7 @@ function logo_icon() {
 function primary_navigation() {
 		$openType = get_theme_mod( 'primary_navigation_open_type' );
 	?>
-	<nav id="site-navigation" class="main-navigation header-navigation <?php echo $openType == 'click' ? 'click-to-open' : 'hover-to-open'; ?> nav--toggle-sub header-navigation-style-<?php echo esc_attr( kadence()->option( 'primary_navigation_style' ) ); ?> header-navigation-dropdown-animation-<?php echo esc_attr( kadence()->option( 'dropdown_navigation_reveal' ) ); ?>" role="navigation" aria-label="<?php esc_attr_e( 'Primary Navigation', 'kadence' ); ?>">
+	<nav id="site-navigation" class="main-navigation header-navigation <?php echo $openType == 'click' ? 'click-to-open' : 'hover-to-open'; ?> nav--toggle-sub header-navigation-style-<?php echo esc_attr( kadence()->option( 'primary_navigation_style' ) ); ?> header-navigation-dropdown-animation-<?php echo esc_attr( kadence()->option( 'dropdown_navigation_reveal' ) ); ?>" role="navigation" aria-label="<?php esc_attr_e( 'Primary', 'kadence' ); ?>">
 	<?php kadence()->customizer_quick_link(); ?>
 		<div class="primary-menu-container header-menu-container">
 	<?php
@@ -247,7 +247,7 @@ function primary_navigation() {
 function secondary_navigation() {
 		$openType = get_theme_mod( 'secondary_navigation_open_type' );
 	?>
-	<nav id="secondary-navigation" class="secondary-navigation header-navigation <?php echo $openType == 'click' ? 'click-to-open' : 'hover-to-open'; ?> nav--toggle-sub header-navigation-style-<?php echo esc_attr( kadence()->option( 'secondary_navigation_style' ) ); ?> header-navigation-dropdown-animation-<?php echo esc_attr( kadence()->option( 'dropdown_navigation_reveal' ) ); ?>" role="navigation" aria-label="<?php esc_attr_e( 'Secondary Navigation', 'kadence' ); ?>">
+	<nav id="secondary-navigation" class="secondary-navigation header-navigation <?php echo $openType == 'click' ? 'click-to-open' : 'hover-to-open'; ?> nav--toggle-sub header-navigation-style-<?php echo esc_attr( kadence()->option( 'secondary_navigation_style' ) ); ?> header-navigation-dropdown-animation-<?php echo esc_attr( kadence()->option( 'dropdown_navigation_reveal' ) ); ?>" role="navigation" aria-label="<?php esc_attr_e( 'Secondary', 'kadence' ); ?>">
 		<?php kadence()->customizer_quick_link(); ?>
 			<div class="secondary-menu-container header-menu-container">
 		<?php
@@ -598,7 +598,7 @@ function navigation_popup() {
  */
 function mobile_navigation() {
 	?>
-	<nav id="mobile-site-navigation" class="mobile-navigation drawer-navigation drawer-navigation-parent-toggle-<?php echo esc_attr( kadence()->option( 'mobile_navigation_parent_toggle' ) ? 'true' : 'false' ); ?>" role="navigation" aria-label="<?php esc_attr_e( 'Primary Mobile Navigation', 'kadence' ); ?>">
+	<nav id="mobile-site-navigation" class="mobile-navigation drawer-navigation drawer-navigation-parent-toggle-<?php echo esc_attr( kadence()->option( 'mobile_navigation_parent_toggle' ) ? 'true' : 'false' ); ?>" role="navigation" aria-label="<?php esc_attr_e( 'Primary Mobile', 'kadence' ); ?>">
 		<?php kadence()->customizer_quick_link(); ?>
 		<div class="mobile-menu-container drawer-menu-container">
 			<?php
@@ -1064,7 +1064,7 @@ function header_search() {
 			<?php
 		}
 		?>
-		<button class="search-toggle-open drawer-toggle search-toggle-style-<?php echo esc_attr( kadence()->option( 'header_search_style' ) ); ?>" aria-label="<?php esc_attr_e( 'View Search Form', 'kadence' ); ?>" data-toggle-target="#search-drawer" data-toggle-body-class="showing-popup-drawer-from-full" aria-expanded="false" data-set-focus="#search-drawer .search-field"
+		<button class="search-toggle-open drawer-toggle search-toggle-style-<?php echo esc_attr( kadence()->option( 'header_search_style' ) ); ?>" aria-label="<?php esc_attr_e( 'View Search Form', 'kadence' ); ?>" aria-haspopup="true" aria-controls="search-drawer" data-toggle-target="#search-drawer" data-toggle-body-class="showing-popup-drawer-from-full" aria-expanded="false" data-set-focus="#search-drawer .search-field"
 			<?php
 			if ( kadence()->is_amp() ) {
 				?>
@@ -1101,7 +1101,7 @@ function search_toggle() {
  */
 function search_modal() {
 	?>
-	<div id="search-drawer" class="popup-drawer popup-drawer-layout-fullwidth" data-drawer-target-string="#search-drawer"
+	<div id="search-drawer" aria-modal="true" role="dialog" aria-label="<?php esc_attr_e( 'Search', 'kadence' ); ?>" class="popup-drawer popup-drawer-layout-fullwidth" data-drawer-target-string="#search-drawer"
 		<?php
 		if ( kadence()->is_amp() ) {
 			?>
@@ -1113,7 +1113,7 @@ function search_modal() {
 		<div class="drawer-overlay" data-drawer-target-string="#search-drawer"></div>
 		<div class="drawer-inner">
 			<div class="drawer-header">
-				<button class="search-toggle-close drawer-toggle" aria-label="<?php esc_attr_e( 'Close search', 'kadence' ); ?>"  data-toggle-target="#search-drawer" data-toggle-body-class="showing-popup-drawer-from-full" aria-expanded="false" data-set-focus=".search-toggle-open"
+				<button class="search-toggle-close drawer-toggle" aria-label="<?php esc_attr_e( 'Close search', 'kadence' ); ?>"  data-toggle-target="#search-drawer" data-toggle-body-class="showing-popup-drawer-from-full" data-set-focus=".search-toggle-open"
 				<?php
 				if ( kadence()->is_amp() ) {
 					?>

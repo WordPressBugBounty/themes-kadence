@@ -84,7 +84,7 @@ function footer_html() {
  */
 function footer_navigation() {
 	?>
-	<nav id="footer-navigation" class="footer-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Navigation', 'kadence' ); ?>">
+	<nav id="footer-navigation" class="footer-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer', 'kadence' ); ?>">
 		<?php kadence()->customizer_quick_link(); ?>
 		<div class="footer-menu-container">
 			<?php
