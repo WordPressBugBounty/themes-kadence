@@ -4,7 +4,7 @@ Tags: translation-ready, accessibility-ready, two-columns, right-sidebar, left-s
 Requires at least: 6.3
 Tested up to: 6.8.2
 Requires PHP: 7.4
-Stable tag: 1.3.5
+Stable tag: 1.3.6
 License: GNU General Public License v3.0 (or later)
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -25,6 +25,9 @@ Please report security bugs found in the source code of the Kadence Theme throug
 Please report security bugs found in the Kadence theme's source code through the Patchstack Vulnerability Disclosure Program https://patchstack.com/database/vdp/kadence. The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this theme.
 
 = Changelog =
+
+= 1.3.6 | 25th September 2025
+* Fix: Ignore comment replies when scrolling to id.
 
 = 1.3.5 | 11th September 2025
 * Fix: Store Notice "Disable Dismiss Button" Option Not Working When Placement Set to Above

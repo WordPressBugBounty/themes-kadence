@@ -1,3 +1,7 @@
+= 1.3.6 | 25th September 2025
+* Fix: Ignore comment replies when scrolling to id.
+* Fix: Some social links did not have fields in the customizer.
+
 = 1.3.5 | 11th September 2025
 * Fix: Store Notice "Disable Dismiss Button" Option Not Working When Placement Set to Above
 * Fix: Header Enable Reveal Sticky on Scroll issue with bottom row.
