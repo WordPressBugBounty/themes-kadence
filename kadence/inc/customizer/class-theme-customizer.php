@@ -485,6 +485,7 @@ class Theme_Customizer {
 		);
 
 		self::$live_control['kadence_global_palette'] = $palette_live;
+
 	}
 	/**
 	 * Add Controls
